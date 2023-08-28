@@ -1,3 +1,8 @@
+## These cache R functions in this assignment are able to cache potentially time-consuming computations.
+
+## caches the inverse of a matrix
+
+
 makeVector <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
@@ -11,6 +16,8 @@ makeVector <- function(x = matrix()) {
        setinverse = setinverse,
        getinverse = getinverse)
 }
+
+## This function creates a special "matrix" object that can cache its inverse
 cacheinverse <- function(x, ...) {
   m <- x$getinverse()
   if(!is.null(m)) {
@@ -22,6 +29,5 @@ cacheinverse <- function(x, ...) {
   x$setinverse(m)
   m
 }
-
 
 
